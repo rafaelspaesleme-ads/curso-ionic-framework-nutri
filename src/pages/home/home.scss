@@ -1,0 +1,35 @@
+page-home {
+
+    .logo{
+        width: auto;
+        margin: auto;
+        display: block;
+        max-width: 30%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .textos{
+
+        color: darkblue;
+        background: none;
+        text-align: center;
+        a{
+            color: darkcyan;
+        }
+
+    }
+
+    .botao{
+        border-radius: 30px !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .ion-item{
+        border-radius: 30px !important;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 10px !important;
+    }
+
+}

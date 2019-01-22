@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="font-title-pri" *ngIf="post" [innerHTML]="post.title.rendered"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div *ngIf="post">
+  <div>
+    <img [src]="post.better_featured_image.source_url" class="imgTopo"/>
+  </div>
+
+  <div class="post-title" [innerHTML]="post.title.rendered"></div>
+  <p class="post-content" [innerHTML]="post.content.rendered"></p>
+
+  <ion-row>
+    <ion-col>
+        <ion-icon name="calendar"></ion-icon>
+        {{ post.date.split('T')[0] | date: 'd MMM, y' }}
+    </ion-col>
+    <ion-col text-right>
+        <ion-icon name="person"></ion-icon>
+        {{ user }}
+    </ion-col>
+  </ion-row>
+  <p class="bold-title">Categoria:</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="categoria-col" *ngFor="let category of categories">
+          <ion-badge>{{category.name}}</ion-badge>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+</div>
+</ion-content>

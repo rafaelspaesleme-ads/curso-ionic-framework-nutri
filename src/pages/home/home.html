@@ -1,0 +1,24 @@
+<ion-content padding>
+<br>
+
+
+<img class="logo" src="../../assets/imgs/ic_logo.png">
+
+  <ion-item>
+    <ion-label><ion-icon name="person"></ion-icon> Usuário: </ion-label>
+    <ion-input type="text" #usuario></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label><ion-icon name="key"></ion-icon> Senha: </ion-label>
+    <ion-input type="password" #senha></ion-input>
+  </ion-item>
+
+  <button ion-button block class="botao" (click)="entrar()">Conectar</button>
+  <button ion-button block class="botao" (click)="loginWithFacebook()" icon-start><ion-icon name="logo-facebook"></ion-icon> Login com Facebook</button>
+  <button ion-button block class="botao" (click)="loginVisitante()" color="danger">Entrar como visitante</button>
+
+  <p class="textos"><a (click)="cadastrar()">Criar uma conta</a></p>
+  <p class="textos"><a (click)="recuperar()">Esqueci minha senha</a></p>
+
+</ion-content>

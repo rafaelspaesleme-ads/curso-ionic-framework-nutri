@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TELA PRINCIPAL</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+          <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Puxe para atualizar"
+      refreshingSpinner="circles"
+      refreshingText="Atualizando...">
+
+    </ion-refresher-content>
+  </ion-refresher>
+
+    <ion-card *ngFor="let post of posts">
+        <img [src]="post.better_featured_image.source_url"/>
+        <ion-card-content>
+          <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+          <p [innerHTML]="post.excerpt.rendered"></p>
+        </ion-card-content>
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="primary" icon-start>
+              {{ post.date.split('T')[0] | date: 'd MMM, y' }}
+            </button>
+          </ion-col>
+          <ion-col text-right>
+            <button ion-button small color="primary" (click)="postTapped($event, post)" icon-start>
+              Leia mais...
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-infinite-scroll [enabled]="morePageAvailable" (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content loadingSpinner="bubbles"loadingText="Carregando...">
+          </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+</ion-content>

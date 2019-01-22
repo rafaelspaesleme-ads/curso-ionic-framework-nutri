@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <h2 style="text-align: center">Registro de usuário</h2>
+
+  <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon> Usuário: </ion-label>
+    <ion-input type="text" #usuario></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label><ion-icon name="key"></ion-icon> Senha: </ion-label>
+    <ion-input type="password" #senha></ion-input>
+  </ion-item>
+
+  <button ion-button block class="botao" (click)="entrar()">CADASTRAR</button>
+
+</ion-content>

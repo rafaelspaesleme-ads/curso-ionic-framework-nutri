@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <ion-title>Meu perfil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+          <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item *ngIf="fotoPerfil">
+    <ion-thumbnail item-start>
+      <img src="{{ facebook.fotoUrl }}">
+    </ion-thumbnail>
+    <h2>{{ facebook.nome }}</h2>
+    <p>{{ facebook.email }}</p>
+    <p>{{ facebook.telefone }}</p>
+</ion-item>
+
+  <ion-item *ngIf="!fotoPerfil">
+      <ion-thumbnail item-start>
+        <img src="../../assets/imgs/user.png">
+      </ion-thumbnail>
+      <h2>SetupCar</h2>
+      <p>{{email}}</p>
+  </ion-item>
+</ion-content>
